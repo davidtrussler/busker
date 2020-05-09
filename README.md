@@ -13,3 +13,9 @@ Adds the section of the sound file to be used initially
 ### [Treatments_Filters](https://github.com/davidtrussler/busker/tree/Treatments_Filters)
 
 ### [Treatments_Modulation](https://github.com/davidtrussler/busker/tree/Treatments_Modulation)
+
+Investigates different methods available in SC to manipulate and treat a sound source
+
+- Ring Modulation
+- Amplitude Modulation
+- Frequency Modulation

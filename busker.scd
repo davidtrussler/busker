@@ -1,22 +1,28 @@
 s.boot;
 
+// Define sound file to be used
+(
 ~soundPath = thisProcess.nowExecutingPath.dirname +/+ "sounds/";
 ~buskerSnd = Buffer.read(s, ~soundPath ++ "busker.aiff");
+)
 
+// Define the SynthDef to play the sound file
 (
 SynthDef("busker", {
-	arg pan = 0, rate = 1;
 	Out.ar(
 		0,
-		{Pan2.ar(PlayBuf.ar(1, ~buskerSnd, loop: 1, rate: rate), pan)}
+		{Pan2.ar(PlayBuf.ar(1, ~buskerSnd, loop: 1, rate: 1), 0)}
 	)
 }).add;
 )
 
-a = Synth("busker");
+// Play the soundfile
+~synth = Synth("busker");
 
-a.set('rate', 1);
+// Stop playback
+~synth.free;
 
-a.free;
+// Free Buffer memory
+~buskerSnd.free;
 
 s.quit;
