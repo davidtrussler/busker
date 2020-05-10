@@ -14,3 +14,4 @@ Investigates different methods available in SC to manipulate and treat a sound s
 
 - playback speed
 - pan position
+- filters
