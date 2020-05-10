@@ -8,7 +8,7 @@ A SuperCollider project based on a sound recording of a busker on a bridge
 
 Adds the section of the sound file to be used initially
 
-### [Treatments_filters]()
+### [Treatments_filters](https://github.com/davidtrussler/busker/tree/Treatments_Filters)
 
 Investigates different methods available in SC to manipulate and treat a sound source
 
