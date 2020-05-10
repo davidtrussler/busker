@@ -6,29 +6,6 @@ s.boot;
 ~buskerSnd = Buffer.read(s, ~soundPath ++ "busker.aiff");
 )
 
-
-// Playback rate and pan position set as arguments -->
-// Define the SynthDef to play the sound file
-(
-SynthDef("busker", {
-	arg rate = 1, pan = 0;
-	Out.ar(
-		0,
-		{Pan2.ar(PlayBuf.ar(1, ~buskerSnd, loop: 1, rate: rate), pan)}
-	)
-}).add;
-)
-
-// Set playback rate
-~synth.set('rate', 2);
-
-// Set the pan position
-~synth.set('pan', -1);
-
-// <-- Playback rate and pan position set as arguments
-
-
-// Filter values set as arguments -->
 // Define the SynthDef to play the sound file
 (
 SynthDef("busker", {
@@ -57,11 +34,8 @@ SynthDef("busker", {
 }).add;
 )
 
-// Set playback rate
-~synth.set('rate', 1);
-
-// Set the pan position
-~synth.set('pan', 0);
+// Play the soundfile
+~synth = Synth("busker");
 
 // Set the filter cutoff frequency
 ~synth.set('freq', 880);
@@ -89,12 +63,6 @@ SynthDef("busker", {
 
 // Set the dn (maximum downward slope in units per second) value
 ~synth.set('dn', 1);
-
-// <-- Filter values set as arguments
-
-
-// Play the soundfile
-~synth = Synth("busker");
 
 // Stop playback
 ~synth.free;
