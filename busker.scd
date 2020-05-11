@@ -1,22 +1,38 @@
 s.boot;
 
+(
 ~soundPath = thisProcess.nowExecutingPath.dirname +/+ "sounds/";
 ~buskerSnd = Buffer.read(s, ~soundPath ++ "busker.aiff");
+)
 
 (
 SynthDef("busker", {
-	arg pan = 0, rate = 1;
+	arg maxdelaytime = 0.2, delaytime = 0.2, decaytime = 1.0;
+
+	var in = PlayBuf.ar(1, ~buskerSnd, loop: 1, rate: 1);
+
 	Out.ar(
 		0,
-		{Pan2.ar(PlayBuf.ar(1, ~buskerSnd, loop: 1, rate: rate), pan)}
+		{Pan2.ar(
+			CombC.ar(
+				in,
+				maxdelaytime,
+				delaytime,
+				decaytime,
+			), 0
+		)}
 	)
 }).add;
 )
 
-a = Synth("busker");
+~synth = Synth("busker");
 
-a.set('rate', 1);
+~synth.set('maxdelaytime', 0.25);
+~synth.set('delaytime', 0.25);
+~synth.set('decaytime', 8);
 
-a.free;
+~synth.free;
+
+~buskerSnd.free;
 
 s.quit;
