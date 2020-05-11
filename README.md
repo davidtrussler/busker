@@ -18,4 +18,3 @@ Investigates different methods available in SC to manipulate and treat a sound s
 
 - Ring Modulation
 - Amplitude Modulation
-- Frequency Modulation
