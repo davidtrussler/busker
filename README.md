@@ -13,3 +13,5 @@ Adds the section of the sound file to be used initially
 ### [Treatments_Filters](https://github.com/davidtrussler/busker/tree/Treatments_Filters)
 
 ### [Treatments_Modulation](https://github.com/davidtrussler/busker/tree/Treatments_Modulation)
+
+### [Treatments_Delays](https://github.com/davidtrussler/busker/tree/Treatments_Delays)
