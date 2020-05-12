@@ -2,8 +2,18 @@
 
 A SuperCollider project based on a sound recording of a busker on a bridge
 
-## Branches
+## Unmerged branches
 
-### [Add-buffered-sound](https://github.com/davidtrussler/busker/tree/Add-buffered-sound)
+Branches used for experimentation, remaining unmerged
 
-Adds the section of the sound file to be used initially
+### [Treatments_Playback](https://github.com/davidtrussler/busker/tree/Treatments_Playback)
+
+Investigates controlling playback rate and pan position
+
+### [Treatments_Modulation](https://github.com/davidtrussler/busker/tree/Treatments_Modulation)
+
+Investigates modulation of signal
+
+### [Treatments_Delays](https://github.com/davidtrussler/busker/tree/Treatments_Delays)
+
+Investigates processing of signal with delays (WIP)
